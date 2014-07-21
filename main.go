@@ -4,7 +4,6 @@ package main
 import (
 	"fmt"
 	"github.com/codegangsta/cli"
-	//iconv "github.com/djimenez/iconv-go"
 	"os"
 )
 
@@ -21,7 +20,6 @@ func main() {
 	app.Action = func(c *cli.Context) {
 		//全局帮助提示
 		message := "Please use command \"fungo -h\" or \"fungo --help\" get information for help \n请使用命令 \"fungo -h\" 或 \"fungo --help\" 获取帮助的信息"
-		//ms, _ := iconv.ConvertString(message, "UTF-8", "GBK")
 
 		//分析全局选项命令
 		//var dirName string
