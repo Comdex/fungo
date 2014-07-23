@@ -62,11 +62,12 @@ func main() {
 			},
 		},
 		{
-			Name:      "complie",
+			Name:      "compile",
 			ShortName: "c",
 			Usage:     "根据输入的站点目录编译生成静态网站",
 			Action: func(c *cli.Context) {
-				println("completed task: ", c.Args().First())
+				//println("completed task: ", c.Args().First())
+				command.ComplieCommand(c.Args().First())
 			},
 		},
 	}

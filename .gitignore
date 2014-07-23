@@ -20,3 +20,8 @@ _cgo_export.*
 _testmain.go
 
 *.exe
+<<<<<<< HEAD
+=======
+*.test
+*.prof
+>>>>>>> 7517140f474ed3ab675fd84921b1ec64667bcc26

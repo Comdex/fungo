@@ -7,7 +7,7 @@ import (
 )
 
 //要编译的文章模板
-var fileArray []string
+var FileArray []string
 
 //根据输入的内容和摘要长度获取文章摘要
 func GetSummary(content string, length int) string {
@@ -34,7 +34,7 @@ func GetAllArticles(dirName string) {
 
 func walkFunc(path string, info os.FileInfo, err error) error {
 	if endWith(path, ".article") {
-		fileArray = append(fileArray, path)
+		FileArray = append(FileArray, path)
 	}
 	return nil
 }
