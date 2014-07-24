@@ -33,20 +33,20 @@ func GetAllArticles(dirName string) {
 }
 
 func walkFunc(path string, info os.FileInfo, err error) error {
-	if endWith(path, ".article") {
+	if strings.HasSuffix(path, ".article") {
 		FileArray = append(FileArray, path)
 	}
 	return nil
 }
 
-func endWith(s, pattern string) bool {
-	pos := strings.LastIndex(s, pattern)
-	if pos == -1 {
-		return false
-	}
-	if (pos + len(pattern)) == len(s) {
-		return true
-	} else {
-		return false
-	}
-}
+//func endWith(s, pattern string) bool {
+//	pos := strings.LastIndex(s, pattern)
+//	if pos == -1 {
+//		return false
+//	}
+//	if (pos + len(pattern)) == len(s) {
+//		return true
+//	} else {
+//		return false
+//	}
+//}
