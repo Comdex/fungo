@@ -45,27 +45,28 @@ func ComplieCommand(dirName string) {
 		file, err := os.Create(dirName + "/" + articles[i].Article_url)
 		fmt.Println(articles[i].Article_url)
 		CheckError(err)
-		t := template.New(articles[i].Title)
-		tp, err2 := t.Parse(`<!DOCTYPE html>
-<html lang='zh-CN'>
-<head>
-<meta charset='utf-8'>
-</head>
-<body>
-<div id="article-container" class="clear">
-    <article class="clear 9" id="article-{{.Title}}">
-        <h3 class="title"><a href="" title="{{.Title}}">{{.Title}}</a></h3>
-        <section class="content markdown">{{.Content}}</section>
-        <p class="info clear">{{if .Tag}}
-            <span class="author inline-block"><i class="fa fa-user"></i>{{.Tag}}</span>{{end}}
-            <span class="time inline-block"><i class="fa fa-clock-o"></i>niin</span>nini
-            <span class="tag inline-block"><i class="fa fa-tags"></i>nini<a href="u">nini</a>nini</span>nini
-            <span class="views inline-block right">阅读&nbsp;&nbsp;<span>{{.Tag}}</span>&nbsp;&nbsp;次</span>
-        </p>
-    </article>   
-</div>
-<body>
-<html>`)
+		//t := template.New(articles[i].Title)
+		//tp, err2 := t.Parse(`<!DOCTYPE html>
+		//<html lang='zh-CN'>
+		//<head>
+		//<meta charset='utf-8'>
+		//</head>
+		//<body>
+		//<div id="article-container" class="clear">
+		//  <article class="clear 9" id="article-{{.Title}}">
+		//      <h3 class="title"><a href="" title="{{.Title}}">{{.Title}}</a></h3>
+		//      <section class="content markdown">{{.Content}}</section>
+		//      <p class="info clear">{{if .Tag}}
+		//          <span class="author inline-block"><i class="fa fa-user"></i>{{.Tag}}</span>{{end}}
+		//          <span class="time inline-block"><i class="fa fa-clock-o"></i>niin</span>nini
+		//          <span class="tag inline-block"><i class="fa fa-tags"></i>nini<a href="u">nini</a>nini</span>nini
+		//          <span class="views inline-block right">阅读&nbsp;&nbsp;<span>{{.Tag}}</span>&nbsp;&nbsp;次</span>
+		//      </p>
+		//  </article>
+		//</div>
+		//<body>
+		//<html>`)
+		tp, err2 := template.ParseFiles(dirName + "/article.tmpl")
 		fmt.Println(dirName + "\\article.html")
 		CheckError(err2)
 		fmt.Println("zheer")
