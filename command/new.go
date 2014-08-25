@@ -46,7 +46,7 @@ summary = 50`)
 	defer fout.Close()
 
 	_, err7 := fout.WriteString(`#文章标题
-title：大家好,这是我的第一篇博客！
+title:大家好,这是我的第一篇博客！
 #标签
 tag:大家好
 #文章网页url,可选，默认为文件名

@@ -1,0 +1,20 @@
+<div id="article-container" class="clear">{{if .Tag}}
+    <div class="tag-banner">标签：{{.Tag}}</div>{{end}}{{range .Articles}}
+    <article class="clear {{.Status}}" id="article-{{.Id}}">
+        <div class="meta left text-center">
+            <p class="lbl lbl-myblue time"><i class="fa fa-clock-o"></i><strong>{{DateInt64 .CreateTime "YYYY.MM.DD"}}</strong></p>
+        </div>
+        <div class="main">
+            <h3 class="title"><a href="{{.Link}}" title="{{.Title}}">{{.Title}}</a></h3>
+            <section class="content markdown">{{Html .Summary}}</section>
+            <p class="info clear">{{if .User}}
+                <span class="author inline-block"><i class="fa fa-user"></i>{{.User.Nick}}</span>{{end}}{{if .TagString}}
+                <span class="tag inline-block"><i class="fa fa-tags"></i>标签：{{range .GetTags}}<a href="{{.Link}}">{{.Name}}</a>{{end}}</span>{{end}}
+                <a class="inline-block read right" href="{{.Link}}"><i class="fa fa-search"></i>继续阅读</a>
+            </p>
+        </div>
+    </article>{{end}}
+    <div class="pager text-center">{{range .Pager.PageSlice}}
+        <a href="/p/{{.}}/" class="item{{if eq $.Pager.Current .}} current{{end}}">{{.}}</a>{{end}}
+    </div>
+</div>

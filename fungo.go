@@ -36,8 +36,11 @@ func main() {
 					//path,_:=os.Getwd()
 					command.NewCommand(dirName)
 				}
-			} else {
-
+			} else if cliName == "del" {
+				dirName := c.Args()[1]
+				if dirName != "" {
+					command.DelCommand(dirName)
+				}
 			}
 
 		} else {
